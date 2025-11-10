@@ -155,6 +155,7 @@ export default function Home() {
             <FileInput.Root className="w-full">
               <FileInput.Trigger />
               <FileInput.Control multiple />
+              <FileInput.FileList />
             </FileInput.Root>
           </div>
 
