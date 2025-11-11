@@ -1,5 +1,6 @@
-import { FileInput, Input, SettingsTabs } from '@/components'
-import { MailIcon, UploadCloud, User } from 'lucide-react'
+import { MailIcon } from 'lucide-react'
+
+import { FileInput, Input, Select, SettingsTabs } from '@/components'
 
 export default function Home() {
   return (
@@ -116,8 +117,8 @@ export default function Home() {
             >
               Country
             </label>
-            <div></div>
-            <div />
+
+            <Select />
           </div>
 
           <div className="grid-cols-form grid gap-3 pb-5">
