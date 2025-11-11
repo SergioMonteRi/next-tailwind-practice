@@ -118,7 +118,10 @@ export default function Home() {
               Country
             </label>
 
-            <Select />
+            <Select.Root placeholder="Select a country...">
+              <Select.Item text="United States" value="united-states" />
+              <Select.Item text="Brazil" value="brazil" />
+            </Select.Root>
           </div>
 
           <div className="grid-cols-form grid gap-3 pb-5">
@@ -128,8 +131,12 @@ export default function Home() {
             >
               Timezone
             </label>
-            <div></div>
-            <div />
+            <Select.Root placeholder="Select a timezone...">
+              <Select.Item text="UTC" value="utc" />
+              <Select.Item text="GMT" value="gmt" />
+              <Select.Item text="CET" value="cet" />
+              <Select.Item text="EET" value="eet" />
+            </Select.Root>
           </div>
 
           <div className="grid-cols-form grid gap-3 pb-5">
