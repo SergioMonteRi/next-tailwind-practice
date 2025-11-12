@@ -4,6 +4,7 @@ import { Trash2, UploadCloud } from 'lucide-react'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 import { formatBytes } from '@/utils'
+import { Button } from '@/components'
 
 import { useFileInput } from '../root'
 
@@ -41,13 +42,13 @@ export function FileList() {
             </div>
           </div>
 
-          <button
+          <Button
             type="button"
-            className="ml-auto cursor-pointer rounded-md p-2 hover:bg-zinc-50"
+            variant="ghost"
             onClick={() => onRemoveFile(file.name)}
           >
             <Trash2 className="h-5 w-5 text-zinc-500" />
-          </button>
+          </Button>
         </div>
       ))}
     </div>
