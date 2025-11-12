@@ -23,7 +23,7 @@ export function Root({ placeholder, children, ...props }: RootProps) {
           side="bottom"
           position="popper"
           sideOffset={8}
-          className="z-10 w-(--radix-select-trigger-width) overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm"
+          className="animate-slide-down-and-fade z-10 w-(--radix-select-trigger-width) overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm"
         >
           <SelectRadix.Viewport className="w-full text-black">
             {children}
