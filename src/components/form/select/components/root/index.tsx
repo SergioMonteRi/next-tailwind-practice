@@ -11,7 +11,7 @@ interface RootProps extends SelectRadix.SelectProps {
 export function Root({ placeholder, children, ...props }: RootProps) {
   return (
     <SelectRadix.Root {...props}>
-      <SelectRadix.Trigger className="flex h-11 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-placeholder:text-zinc-600">
+      <SelectRadix.Trigger className="flex h-11 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus:border-violet-300 focus:ring-4 focus:ring-violet-100 data-placeholder:text-zinc-600">
         <SelectRadix.Value className="text-black" placeholder={placeholder} />
         <SelectRadix.Icon>
           <ChevronDown className="h-5 w-5 text-zinc-500" />
