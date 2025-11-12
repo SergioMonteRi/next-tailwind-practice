@@ -3,7 +3,18 @@
 @theme {
   --grid-template-columns-app: minmax(18rem, 20rem) 1fr;
   --grid-template-columns-form: minmax(7.5rem, 17.5rem) minmax(25rem, 1fr) minmax(0, 15rem);
+  
   --color-violet-25: #fcfaff;
+  --color-error-25: #FFFBFA;
+  --color-error-50: #FEF3F2;
+  --color-error-100: #FEE4E2;
+  --color-error-200: #FECDCA;
+  --color-error-300: #FDA29B;
+  --color-error-400: #F97066;
+  --color-error-500: #F04438;
+  --color-error-600: #D92D20;
+  --color-error-700: #B42318;
+
   --animate-slide-down-and-fade: slideDownAndFade 1s cubic-bezier(0.16, 1, 0.3, 1);
   
  @keyframes slideDownAndFade {
