@@ -12,7 +12,7 @@ import {
   SearchIcon,
   Menu,
 } from 'lucide-react'
-
+import { twMerge } from 'tailwind-merge'
 import * as CollapsibleRadix from '@radix-ui/react-collapsible'
 
 import { Logo, NavItem, Profile, UsedSpaceWidget } from './components'
@@ -21,7 +21,7 @@ import { Button } from '../button'
 
 export function Sidebar() {
   return (
-    <CollapsibleRadix.Root className="fixed top-0 right-0 left-0 z-20 flex flex-col gap-6 border-b border-zinc-200 bg-white p-4 data-[state=open]:bottom-0 lg:right-auto lg:w-80 lg:border-r lg:px-5 lg:py-8 lg:data-[state=closed]:bottom-0">
+    <CollapsibleRadix.Root className="fixed top-0 right-0 left-0 z-20 flex flex-col gap-6 border-b border-zinc-200 bg-white p-4 data-[state=open]:bottom-0 lg:right-auto lg:w-80 lg:border-r lg:px-5 lg:py-8 lg:data-[state=closed]:bottom-0 dark:border-zinc-800 dark:bg-zinc-900">
       <div className="flex items-center justify-between">
         <Logo />
         <CollapsibleRadix.Trigger className="lg:hidden" asChild>
@@ -34,7 +34,10 @@ export function Sidebar() {
       <CollapsibleRadix.Content
         asChild
         forceMount
-        className="data-[state=closed]:animate-slide-up-and-fade data-[state=open]:animate-slide-down-and-fade data-[state=closed]:hidden lg:data-[state=closed]:flex"
+        className={twMerge(
+          'data-[state=closed]:animate-slide-up-and-fade data-[state=open]:animate-slide-down-and-fade data-[state=closed]:hidden',
+          'lg:data-[state=closed]:flex',
+        )}
       >
         <div className="flex flex-1 flex-col gap-6">
           <Input.Root>
@@ -61,7 +64,7 @@ export function Sidebar() {
 
             <UsedSpaceWidget />
 
-            <div className="h-px bg-zinc-200" />
+            <div className={twMerge('h-px bg-zinc-200', 'dark:bg-zinc-800')} />
 
             <Profile />
           </div>

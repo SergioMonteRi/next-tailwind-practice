@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
+import { twMerge } from 'tailwind-merge'
+
 import { Sidebar } from '@/components'
+
+import './globals.css'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,7 +31,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="lg:grid-cols-app min-h-screen lg:grid">
+        <div
+          className={twMerge(
+            'lg:grid-cols-app min-h-screen lg:grid',
+            'dark:bg-zinc-900',
+          )}
+        >
           <Sidebar />
 
           <main className="min-w-0 px-4 pt-24 pb-12 lg:col-start-2 lg:px-8 lg:pt-8 lg:pb-12">

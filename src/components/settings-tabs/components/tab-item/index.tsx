@@ -1,6 +1,7 @@
 'use client'
 
 import * as Tabs from '@radix-ui/react-tabs'
+import { twMerge } from 'tailwind-merge'
 import { motion } from 'framer-motion'
 
 interface TabItemProps {
@@ -13,16 +14,27 @@ export function TabItem({ value, title, isSelected = false }: TabItemProps) {
   return (
     <Tabs.Trigger
       value={value}
-      className="group relative cursor-pointer px-1 pb-4 text-sm font-medium text-zinc-500 outline-none hover:text-violet-700 data-[state=active]:text-violet-700"
+      className={twMerge(
+        'group relative cursor-pointer px-1 pb-4 text-sm font-medium text-zinc-500 outline-none hover:text-violet-700 data-[state=active]:text-violet-700',
+        'dark:text-zinc-400 hover:dark:text-violet-300 dark:data-[state=active]:text-violet-300',
+      )}
     >
-      <span className="rounded whitespace-nowrap group-focus-visible:ring-2 group-focus-visible:ring-violet-400 group-focus-visible:ring-offset-4">
+      <span
+        className={twMerge(
+          'rounded whitespace-nowrap group-focus-visible:ring-2 group-focus-visible:ring-violet-400 group-focus-visible:ring-offset-4',
+          'dark:group-focus-visible:ring-violet-600',
+        )}
+      >
         {title}
       </span>
 
       {isSelected && (
         <motion.div
           layoutId="active-tab"
-          className="absolute right-0 -bottom-px left-0 h-0.5 bg-violet-700"
+          className={twMerge(
+            'absolute right-0 -bottom-px left-0 h-0.5 bg-violet-700',
+            'dark:bg-violet-300',
+          )}
         />
       )}
     </Tabs.Trigger>
