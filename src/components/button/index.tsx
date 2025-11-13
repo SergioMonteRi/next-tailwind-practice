@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
+import { Slot } from '@radix-ui/react-slot'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const button = tv({
@@ -31,8 +32,13 @@ const button = tv({
   },
 })
 
-type ButtonProps = ComponentProps<'button'> & VariantProps<typeof button>
+type ButtonProps = ComponentProps<'button'> &
+  VariantProps<typeof button> & {
+    asChild?: boolean
+  }
 
-export function Button({ variant, className, ...props }: ButtonProps) {
-  return <button {...props} className={button({ variant, className })} />
+export function Button({ asChild, variant, className, ...props }: ButtonProps) {
+  const Component = asChild ? Slot : 'button'
+
+  return <Component {...props} className={button({ variant, className })} />
 }

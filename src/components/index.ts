@@ -1,6 +1,6 @@
 export { Sidebar } from './sidebar'
 export { Input } from './input'
-export { SettingsTabs } from './settings-tabs'
+export { SettingsTabs } from '../app/(home)/settings-tabs'
 export { FileInput, Select } from './form'
 export { Textarea } from './textarea'
 export { Button } from './button'

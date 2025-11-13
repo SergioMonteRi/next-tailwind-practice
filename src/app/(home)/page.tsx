@@ -1,5 +1,5 @@
-import { Bold, Italic, Link, List, ListOrdered, MailIcon } from 'lucide-react'
 import { twMerge } from 'tailwind-merge'
+import { Bold, Italic, Link, List, ListOrdered, MailIcon } from 'lucide-react'
 
 import {
   Button,
@@ -9,6 +9,8 @@ import {
   SettingsTabs,
   Textarea,
 } from '@/components'
+import { CountrySelect } from './country-select'
+import { TimezoneSelect } from './timezone-select'
 
 export default function Home() {
   return (
@@ -172,11 +174,7 @@ export default function Home() {
             >
               Country
             </label>
-
-            <Select.Root placeholder="Select a country...">
-              <Select.Item text="United States" value="united-states" />
-              <Select.Item text="Brazil" value="brazil" />
-            </Select.Root>
+            <CountrySelect />
           </div>
 
           <div className="lg:grid-cols-form flex flex-col gap-3 pb-5 lg:grid">
@@ -189,12 +187,8 @@ export default function Home() {
             >
               Timezone
             </label>
-            <Select.Root placeholder="Select a timezone...">
-              <Select.Item text="UTC" value="utc" />
-              <Select.Item text="GMT" value="gmt" />
-              <Select.Item text="CET" value="cet" />
-              <Select.Item text="EET" value="eet" />
-            </Select.Root>
+
+            <TimezoneSelect />
           </div>
 
           <div className="lg:grid-cols-form flex flex-col gap-3 pb-5 lg:grid">
@@ -212,13 +206,19 @@ export default function Home() {
             </label>
             <div className="space-y-3">
               <div className="flex flex-col gap-3 lg:grid lg:grid-cols-2">
-                <Select.Root placeholder="" defaultValue="normal">
-                  <Select.Item
-                    text="Normal text"
-                    value="normal"
-                    defaultChecked
-                  />
-                  <Select.Item text="Markdown" value="md" />
+                <Select.Root defaultValue="normal">
+                  <Select.Trigger>
+                    <Select.Value placeholder="Select a format..." />
+                  </Select.Trigger>
+
+                  <Select.Content>
+                    <Select.Item value="normal">
+                      <Select.ItemText>Normal text</Select.ItemText>
+                    </Select.Item>
+                    <Select.Item value="md">
+                      <Select.ItemText>Markdown</Select.ItemText>
+                    </Select.Item>
+                  </Select.Content>
                 </Select.Root>
 
                 <div className="flex items-center gap-1">

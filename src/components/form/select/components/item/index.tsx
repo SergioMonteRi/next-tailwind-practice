@@ -2,13 +2,12 @@
 
 import { Check } from 'lucide-react'
 import { twMerge } from 'tailwind-merge'
+import { ComponentProps } from 'react'
 import * as SelectRadix from '@radix-ui/react-select'
 
-type SelectItemProps = SelectRadix.SelectItemProps & {
-  text: string
-}
+type SelectItemProps = ComponentProps<typeof SelectRadix.Item>
 
-export function Item({ text, ...props }: SelectItemProps) {
+export function Item({ children, ...props }: SelectItemProps) {
   return (
     <SelectRadix.Item
       className={twMerge(
@@ -17,11 +16,7 @@ export function Item({ text, ...props }: SelectItemProps) {
       )}
       {...props}
     >
-      <SelectRadix.ItemText asChild>
-        <span className={twMerge('text-black', 'dark:text-zinc-100')}>
-          {text}
-        </span>
-      </SelectRadix.ItemText>
+      {children}
 
       <SelectRadix.ItemIndicator>
         <Check
