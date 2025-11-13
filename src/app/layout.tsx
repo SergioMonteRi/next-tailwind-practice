@@ -31,7 +31,7 @@ export default function RootLayout({
         <div className="lg:grid-cols-app min-h-screen lg:grid">
           <Sidebar />
 
-          <main className="px-4 pt-24 pb-12 lg:col-start-2 lg:px-8 lg:pt-8 lg:pb-12">
+          <main className="min-w-0 px-4 pt-24 pb-12 lg:col-start-2 lg:px-8 lg:pt-8 lg:pb-12">
             {children}
           </main>
         </div>
