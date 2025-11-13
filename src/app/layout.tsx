@@ -31,7 +31,9 @@ export default function RootLayout({
         <div className="grid-cols-app grid min-h-screen">
           <Sidebar />
 
-          <main className="px-8 pt-8 pb-12">{children}</main>
+          <main className="px-4 pt-24 pb-12 lg:col-start-2 lg:px-8 lg:pt-8 lg:pb-12">
+            {children}
+          </main>
         </div>
       </body>
     </html>
