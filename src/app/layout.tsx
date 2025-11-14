@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={twMerge(inter.className, 'bg-zinc-50 dark:bg-zinc-900')}>
         <div
           className={twMerge(
             'lg:grid-cols-app min-h-screen lg:grid',
